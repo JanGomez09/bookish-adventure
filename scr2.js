@@ -4,12 +4,7 @@ function goCheck(){
 
 function checker(room){
 
-    const clses = JSON.parse(localStorage.getItem("cls"));
-
-    if(!clses){
-        document.getElementById("check").textContent = "Sin datos";
-        return;
-    }
+    const clses = JSON.parse(localStorage.getItem("cls")) || {};
 
     const map = {
         1:"cls1", 2:"cls2", 3:"cls3", 4:"cls4", 5:"cls5", 6:"cls6",
@@ -28,3 +23,9 @@ function checker(room){
         document.getElementById("check").textContent = "Ocupada";
     }
 }
+
+
+/* 🔹 vuelve a leer los datos cuando la página reaparece */
+window.addEventListener("pageshow", () => {
+    checker(1); // o el aula que estés mostrando
+});
