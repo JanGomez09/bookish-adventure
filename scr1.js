@@ -37,6 +37,11 @@ const clses = {
   wsh10: false
 }
 
+
+function goCheck(){
+    window.location.href = "index.html";
+}
+
 function changer(room){
     const usJSON = localStorage.getItem("user");
     const user = JSON.parse(usJSON);

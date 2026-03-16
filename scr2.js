@@ -1,6 +1,8 @@
 // pagina de los usuarios
 
-
+function goCheck(){
+    window.location.href = "test2.html";
+}
 
 
 
