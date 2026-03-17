@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <title>CITeatro</title>
     <link rel="stylesheet" href="style.css">
-    
+    <script src="scr2.js"></script>
 </head>
 
 <body>
@@ -52,13 +52,61 @@
     <br><br><br><br>
 
     <div class="boton">
-        <button onclick="checker(1)">Ver aula 1</button>
+        <button onclick="listenForCls1Changes()">Ver aula 1 (escuchar cambios)</button>
     </div>
     <div class="boton">
         <button onclick="goCheck()">Cambiar a activador</button>
     </div>
 
     <br><br>
-    <script src="scr2.js"></script>
+    <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-analytics.js";
+    import { getDatabase, ref, onValue } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
+    
+    const firebaseConfig = {
+        apiKey: "AIzaSyCDy9QGkDlwi7TuDG6FHLpLlEb6ltSphUU",
+        authDomain: "citeatro-17dc6.firebaseapp.com",
+        databaseURL: "https://citeatro-17dc6-default-rtdb.firebaseio.com",
+        projectId: "citeatro-17dc6",
+        storageBucket: "citeatro-17dc6.firebasestorage.app",
+        messagingSenderId: "786823561013",
+        appId: "1:786823561013:web:841ad671c6c1b6c391167c",
+        measurementId: "G-W14G1KSXFT"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+    const database = getDatabase(app);
+    
+    // Hacer la función global
+    window.listenForCls1Changes = function() {
+        const cls1Ref = ref(database, 'Class/cls1');
+        
+        onValue(cls1Ref, (snapshot) => {
+            const currentValue = snapshot.val();
+            if (currentValue !== null) {
+                console.log(`Valor actual de cls1 (en tiempo real): ${currentValue}`);
+                // Aquí puedes actualizar el DOM si quieres
+                document.getElementById('check').textContent = currentValue;
+            } else {
+                console.log("El nodo Class/cls1 no existe.");
+                document.getElementById('check').textContent = "No hay datos";
+            }
+        });
+    };
+    
+    window.goCheck = function() {
+        console.log("Cambiar a activador");
+        // Aquí va tu lógica para goCheck
+    };
+    
+    console.log("Firebase inicializado correctamente");
+</script>
+
+
+    
+    
+    
 </body>
 </html>
