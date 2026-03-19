@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <title>CITeatro</title>
     <link rel="stylesheet" href="style.css">
-
+    <script src="scr3.js"></script>
 </head>
 
 <body>
@@ -15,35 +15,17 @@
 
     <div class="main">
         <div class="contenedor">
-            <h1 id="check"> </h1>
-        </div>  
-
-        <div class="contenedor">
             <div class="cuadro">
                 <div class="campo">
-                    <label>Introduce tu Nombre</label>
+                    <label>Introduce tu usuario</label>
                     <input type="text" id="name" placeholder="Nombre">
                 </div>
 
                 <br><br><br>
 
                 <div class="campo">
-                    <label>Introduce tu Sección</label>
-                    <input type="text" id="secc" placeholder="Seccion">
-                </div>
-            </div>
-
-            <div class="cuadro">
-                <div class="campo">
-                    <label>Introduce tu rol</label>
-                    <input type="text" id="roll" placeholder="Rol">
-                </div>
-
-                <br><br><br>
-
-                <div class="campo">
-                    <label>Introduce la clase<br>en la que estarás</label>
-                    <input type="text" id="clas" placeholder="Clase">
+                    <label>Introduce la contraseña</label>
+                    <input type="text" id="pass" placeholder="contraseña">
                 </div>
             </div>
         </div>
@@ -52,60 +34,10 @@
     <br><br><br><br>
 
     <div class="boton">
-        <button onclick="listenForCls1Changes()">Ver aula 1 (escuchar cambios)</button>
-    </div>
-    <div class="boton">
-        <button onclick="goCheck()">Cambiar a activador</button>
+        <button onclick="logIn()">Checkeo</button>
     </div>
 
     <br><br>
-    <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
-    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-analytics.js";
-    import { getDatabase, ref, onValue } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
-    
-    const firebaseConfig = {
-        apiKey: "AIzaSyCDy9QGkDlwi7TuDG6FHLpLlEb6ltSphUU",
-        authDomain: "citeatro-17dc6.firebaseapp.com",
-        databaseURL: "https://citeatro-17dc6-default-rtdb.firebaseio.com",
-        projectId: "citeatro-17dc6",
-        storageBucket: "citeatro-17dc6.firebasestorage.app",
-        messagingSenderId: "786823561013",
-        appId: "1:786823561013:web:841ad671c6c1b6c391167c",
-        measurementId: "G-W14G1KSXFT"
-    };
-
-    const app = initializeApp(firebaseConfig);
-    const analytics = getAnalytics(app);
-    const database = getDatabase(app);
-    
-    // Hacer la función global
-    window.listenForCls1Changes = function() {
-        const cls1Ref = ref(database, 'Class/cls1');
-        
-        onValue(cls1Ref, (snapshot) => {
-            const currentValue = snapshot.val();
-            if (currentValue !== null) {
-                console.log(`Valor actual de cls1 (en tiempo real): ${currentValue}`);
-                // Aquí puedes actualizar el DOM si quieres
-                document.getElementById('check').textContent = currentValue;
-            } else {
-                console.log("El nodo Class/cls1 no existe.");
-                document.getElementById('check').textContent = "No hay datos";
-            }
-        });
-    };
-    window.goCheck = function() {
-        window.location.href = "test2.html";
-    };
-   
-    
-    console.log("Firebase inicializado correctamente");
-</script>
-
-
-    
-    
     
 </body>
 </html>

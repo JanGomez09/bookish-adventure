@@ -13,39 +13,9 @@
 
     <br><br><br>
 
-    <div class="main">
+     <div class="main">
         <div class="contenedor">
             <h1 id="check"> </h1>
-        </div>  
-
-        <div class="contenedor">
-            <div class="cuadro">
-                <div class="campo">
-                    <label>Introduce tu Nombre</label>
-                    <input type="text" id="name" placeholder="Nombre">
-                </div>
-
-                <br><br><br>
-
-                <div class="campo">
-                    <label>Introduce tu Sección</label>
-                    <input type="text" id="secc" placeholder="Seccion">
-                </div>
-            </div>
-
-            <div class="cuadro">
-                <div class="campo">
-                    <label>Introduce tu rol</label>
-                    <input type="text" id="roll" placeholder="Rol">
-                </div>
-
-                <br><br><br>
-
-                <div class="campo">
-                    <label>Introduce la clase<br>en la que estarás</label>
-                    <input type="text" id="clas" placeholder="Clase">
-                </div>
-            </div>
         </div>
     </div>
 
@@ -96,38 +66,534 @@
             }
         });
     };
-    
+    const user = JSON.parse(localStorage.getItem("user"));
+    console.log(user);
  
     
     window.toggleAndDisplayCls1 = async function() {
-        try {
-            const cls1Ref = ref(database, 'Class/cls1');
-            
-            // Ejecuta una transacción para alternar el valor de cls1
-            const result = await runTransaction(cls1Ref, (currentData) => {
-                if (currentData === null) {
-                    // Si cls1 no existe, lo inicializamos a true
-                    return true;
-                }
-                // Alterna el valor booleano
-                return !currentData;
-            });
+        switch (user){
+            case "_woneralizing_7A_.":
 
-            if (result.committed) {
-                const newValue = result.snapshot.val();
-                console.log(`El valor de cls1 ha sido cambiado a: ${newValue}`);
-                document.getElementById('check').textContent = newValue;
-            } else {
-                console.log("La transacción no se confirmó (posiblemente debido a otra actualización concurrente).");
-            }
-        } catch (error) {
-            console.error("Error al alternar y mostrar cls1:", error);
+                try {
+                    const cls1Ref = ref(database, 'Class/cls1');
+                    
+                    // Ejecuta una transacción para alternar el valor de cls1
+                    const result = await runTransaction(cls1Ref, (currentData) => {
+                        if (currentData === null) {
+                            // Si cls1 no existe, lo inicializamos a true
+                            return true;
+                        }
+                        // Alterna el valor booleano
+                        return !currentData;
+                    });
+
+                    if (result.committed) {
+                        const newValue = result.snapshot.val();
+                        console.log(`El valor de cls1 ha sido cambiado a: ${newValue}`);
+                        document.getElementById('check').textContent = newValue;
+                    } else {
+                        console.log("La transacción no se confirmó (posiblemente debido a otra actualización concurrente).");
+                    }
+                } catch (error) {
+                    console.error("Error al alternar y mostrar cls1:", error);
+                }
+            break;
+            case "_drankkulcc_12A_.":
+                try {
+                    const cls1Ref = ref(database, 'Class/cls2');
+                    
+                    // Ejecuta una transacción para alternar el valor de cls1
+                    const result = await runTransaction(cls1Ref, (currentData) => {
+                        if (currentData === null) {
+                            // Si cls1 no existe, lo inicializamos a true
+                            return true;
+                        }
+                        // Alterna el valor booleano
+                        return !currentData;
+                    });
+
+                    if (result.committed) {
+                        const newValue = result.snapshot.val();
+                        console.log(`El valor de cls2 ha sido cambiado a: ${newValue}`);
+                        document.getElementById('check').textContent = newValue;
+                    } else {
+                        console.log("La transacción no se confirmó (posiblemente debido a otra actualización concurrente).");
+                    }
+                } catch (error) {
+                    console.error("Error al alternar y mostrar cls2:", error);
+                }
+            break;
+            case "_alpolkamipz_10D_.":
+                try {
+                    const cls1Ref = ref(database, 'Class/cls3');
+                    
+                    // Ejecuta una transacción para alternar el valor de cls1
+                    const result = await runTransaction(cls1Ref, (currentData) => {
+                        if (currentData === null) {
+                            // Si cls1 no existe, lo inicializamos a true
+                            return true;
+                        }
+                        // Alterna el valor booleano
+                        return !currentData;
+                    });
+
+                    if (result.committed) {
+                        const newValue = result.snapshot.val();
+                        console.log(`El valor de cls3 ha sido cambiado a: ${newValue}`);
+                        document.getElementById('check').textContent = newValue;
+                    } else {
+                        console.log("La transacción no se confirmó (posiblemente debido a otra actualización concurrente).");
+                    }
+                } catch (error) {
+                    console.error("Error al alternar y mostrar cls3:", error);
+                }
+            break;
+
+            case  "_haznelgratel_7E_.":
+                try {
+                    const cls1Ref = ref(database, 'Class/cls4');
+                    
+                    // Ejecuta una transacción para alternar el valor de cls1
+                    const result = await runTransaction(cls1Ref, (currentData) => {
+                        if (currentData === null) {
+                            // Si cls1 no existe, lo inicializamos a true
+                            return true;
+                        }
+                        // Alterna el valor booleano
+                        return !currentData;
+                    });
+
+                    if (result.committed) {
+                        const newValue = result.snapshot.val();
+                        console.log(`El valor de cls4 ha sido cambiado a: ${newValue}`);
+                        document.getElementById('check').textContent = newValue;
+                    } else {
+                        console.log("La transacción no se confirmó (posiblemente debido a otra actualización concurrente).");
+                    }
+                } catch (error) {
+                    console.error("Error al alternar y mostrar cls4:", error);
+                }
+            break;
+
+            case  "_pretzelpanke_7C_.":
+                try {
+                    const cls1Ref = ref(database, 'Class/cls5');
+                    
+                    // Ejecuta una transacción para alternar el valor de cls1
+                    const result = await runTransaction(cls1Ref, (currentData) => {
+                        if (currentData === null) {
+                            // Si cls1 no existe, lo inicializamos a true
+                            return true;
+                        }
+                        // Alterna el valor booleano
+                        return !currentData;
+                    });
+
+                    if (result.committed) {
+                        const newValue = result.snapshot.val();
+                        console.log(`El valor de cls5 ha sido cambiado a: ${newValue}`);
+                        document.getElementById('check').textContent = newValue;
+                    } else {
+                        console.log("La transacción no se confirmó (posiblemente debido a otra actualización concurrente).");
+                    }
+                } catch (error) {
+                    console.error("Error al alternar y mostrar cls5:", error);
+                }
+            break;
+
+            case  "_dragonsmovie_11D_.":
+                try {
+                    const cls1Ref = ref(database, 'Class/cls6');
+                    
+                    // Ejecuta una transacción para alternar el valor de cls1
+                    const result = await runTransaction(cls1Ref, (currentData) => {
+                        if (currentData === null) {
+                            // Si cls1 no existe, lo inicializamos a true
+                            return true;
+                        }
+                        // Alterna el valor booleano
+                        return !currentData;
+                    });
+
+                    if (result.committed) {
+                        const newValue = result.snapshot.val();
+                        console.log(`El valor de cls6 ha sido cambiado a: ${newValue}`);
+                        document.getElementById('check').textContent = newValue;
+                    } else {
+                        console.log("La transacción no se confirmó (posiblemente debido a otra actualización concurrente).");
+                    }
+                } catch (error) {
+                    console.error("Error al alternar y mostrar cls6:", error);
+                }
+            break;
+
+            case "_jugosambrientos_12B_.":
+                try {
+                    const cls1Ref = ref(database, 'Class/cls7');
+                    
+                    // Ejecuta una transacción para alternar el valor de cls1
+                    const result = await runTransaction(cls1Ref, (currentData) => {
+                        if (currentData === null) {
+                            // Si cls1 no existe, lo inicializamos a true
+                            return true;
+                        }
+                        // Alterna el valor booleano
+                        return !currentData;
+                    });
+
+                    if (result.committed) {
+                        const newValue = result.snapshot.val();
+                        console.log(`El valor de cls7 ha sido cambiado a: ${newValue}`);
+                        document.getElementById('check').textContent = newValue;
+                    } else {
+                        console.log("La transacción no se confirmó (posiblemente debido a otra actualización concurrente).");
+                    }
+                } catch (error) {
+                    console.error("Error al alternar y mostrar cls7:", error);
+                }
+            break;
+
+            case "_gatsbingbigering_10E_.":
+                try {
+                    const cls1Ref = ref(database, 'Class/cls8');
+                    
+                    // Ejecuta una transacción para alternar el valor de cls1
+                    const result = await runTransaction(cls1Ref, (currentData) => {
+                        if (currentData === null) {
+                            // Si cls1 no existe, lo inicializamos a true
+                            return true;
+                        }
+                        // Alterna el valor booleano
+                        return !currentData;
+                    });
+
+                    if (result.committed) {
+                        const newValue = result.snapshot.val();
+                        console.log(`El valor de cls8 ha sido cambiado a: ${newValue}`);
+                        document.getElementById('check').textContent = newValue;
+                    } else {
+                        console.log("La transacción no se confirmó (posiblemente debido a otra actualización concurrente).");
+                    }
+                } catch (error) {
+                    console.error("Error al alternar y mostrar cls8:", error);
+                }
+            break;
+
+            case "_gravewifetotalyded_8A_.":
+                try {
+                    const cls1Ref = ref(database, 'Class/cls9');
+                    
+                    // Ejecuta una transacción para alternar el valor de cls1
+                    const result = await runTransaction(cls1Ref, (currentData) => {
+                        if (currentData === null) {
+                            // Si cls1 no existe, lo inicializamos a true
+                            return true;
+                        }
+                        // Alterna el valor booleano
+                        return !currentData;
+                    });
+
+                    if (result.committed) {
+                        const newValue = result.snapshot.val();
+                        console.log(`El valor de cls9 ha sido cambiado a: ${newValue}`);
+                        document.getElementById('check').textContent = newValue;
+                    } else {
+                        console.log("La transacción no se confirmó (posiblemente debido a otra actualización concurrente).");
+                    }
+                } catch (error) {
+                    console.error("Error al alternar y mostrar cls9:", error);
+                }
+            break;
+
+            case "_narnianiarniaana_12C_.":
+                try {
+                    const cls1Ref = ref(database, 'Class/cls10');
+                    
+                    // Ejecuta una transacción para alternar el valor de cls1
+                    const result = await runTransaction(cls1Ref, (currentData) => {
+                        if (currentData === null) {
+                            // Si cls1 no existe, lo inicializamos a true
+                            return true;
+                        }
+                        // Alterna el valor booleano
+                        return !currentData;
+                    });
+
+                    if (result.committed) {
+                        const newValue = result.snapshot.val();
+                        console.log(`El valor de cls10 ha sido cambiado a: ${newValue}`);
+                        document.getElementById('check').textContent = newValue;
+                    } else {
+                        console.log("La transacción no se confirmó (posiblemente debido a otra actualización concurrente).");
+                    }
+                } catch (error) {
+                    console.error("Error al alternar y mostrar cls10:", error);
+                }
+            break;
+
+            case "_franklinsdaerias_11C_.":
+                try {
+                    const cls1Ref = ref(database, 'Class/cls12');
+                    
+                    // Ejecuta una transacción para alternar el valor de cls1
+                    const result = await runTransaction(cls1Ref, (currentData) => {
+                        if (currentData === null) {
+                            // Si cls1 no existe, lo inicializamos a true
+                            return true;
+                        }
+                        // Alterna el valor booleano
+                        return !currentData;
+                    });
+
+                    if (result.committed) {
+                        const newValue = result.snapshot.val();
+                        console.log(`El valor de cls12 ha sido cambiado a: ${newValue}`);
+                        document.getElementById('check').textContent = newValue;
+                    } else {
+                        console.log("La transacción no se confirmó (posiblemente debido a otra actualización concurrente).");
+                    }
+                } catch (error) {
+                    console.error("Error al alternar y mostrar cls12:", error);
+                }
+            break;
+
+            case "_sheromlelocksgood_9D_.":
+                try {
+                    const cls1Ref = ref(database, 'Class/cls13');
+                    
+                    // Ejecuta una transacción para alternar el valor de cls1
+                    const result = await runTransaction(cls1Ref, (currentData) => {
+                        if (currentData === null) {
+                            // Si cls1 no existe, lo inicializamos a true
+                            return true;
+                        }
+                        // Alterna el valor booleano
+                        return !currentData;
+                    });
+
+                    if (result.committed) {
+                        const newValue = result.snapshot.val();
+                        console.log(`El valor de cls13 ha sido cambiado a: ${newValue}`);
+                        document.getElementById('check').textContent = newValue;
+                    } else {
+                        console.log("La transacción no se confirmó (posiblemente debido a otra actualización concurrente).");
+                    }
+                } catch (error) {
+                    console.error("Error al alternar y mostrar cls13:", error);
+                }
+            break;
+
+             case "_punzaderapunzel_8C_.":
+                try {
+                    const cls1Ref = ref(database, 'Class/cls15');
+                    
+                    // Ejecuta una transacción para alternar el valor de cls1
+                    const result = await runTransaction(cls1Ref, (currentData) => {
+                        if (currentData === null) {
+                            // Si cls1 no existe, lo inicializamos a true
+                            return true;
+                        }
+                        // Alterna el valor booleano
+                        return !currentData;
+                    });
+
+                    if (result.committed) {
+                        const newValue = result.snapshot.val();
+                        console.log(`El valor de cls15 ha sido cambiado a: ${newValue}`);
+                        document.getElementById('check').textContent = newValue;
+                    } else {
+                        console.log("La transacción no se confirmó (posiblemente debido a otra actualización concurrente).");
+                    }
+                } catch (error) {
+                    console.error("Error al alternar y mostrar cls15:", error);
+                }
+            break;
+            case "_maltildadaslam_8B_.":
+                try {
+                    const cls1Ref = ref(database, 'Class/cls16');
+                    
+                    // Ejecuta una transacción para alternar el valor de cls1
+                    const result = await runTransaction(cls1Ref, (currentData) => {
+                        if (currentData === null) {
+                            // Si cls1 no existe, lo inicializamos a true
+                            return true;
+                        }
+                        // Alterna el valor booleano
+                        return !currentData;
+                    });
+
+                    if (result.committed) {
+                        const newValue = result.snapshot.val();
+                        console.log(`El valor de cls16 ha sido cambiado a: ${newValue}`);
+                        document.getElementById('check').textContent = newValue;
+                    } else {
+                        console.log("La transacción no se confirmó (posiblemente debido a otra actualización concurrente).");
+                    }
+                } catch (error) {
+                    console.error("Error al alternar y mostrar cls16:", error);
+                }
+            break;
+            case "_glorianamepidioun67_10C_.":
+                try {
+                    const cls1Ref = ref(database, 'Class/cls17');
+                    
+                    // Ejecuta una transacción para alternar el valor de cls1
+                    const result = await runTransaction(cls1Ref, (currentData) => {
+                        if (currentData === null) {
+                            // Si cls1 no existe, lo inicializamos a true
+                            return true;
+                        }
+                        // Alterna el valor booleano
+                        return !currentData;
+                    });
+
+                    if (result.committed) {
+                        const newValue = result.snapshot.val();
+                        console.log(`El valor de cls17 ha sido cambiado a: ${newValue}`);
+                        document.getElementById('check').textContent = newValue;
+                    } else {
+                        console.log("La transacción no se confirmó (posiblemente debido a otra actualización concurrente).");
+                    }
+                } catch (error) {
+                    console.error("Error al alternar y mostrar cls17:", error);
+                }
+            break;
+
+            case "_spinosochos_7D_.":
+                try {
+                    const cls1Ref = ref(database, 'Class/cls18');
+                    
+                    // Ejecuta una transacción para alternar el valor de cls1
+                    const result = await runTransaction(cls1Ref, (currentData) => {
+                        if (currentData === null) {
+                            // Si cls1 no existe, lo inicializamos a true
+                            return true;
+                        }
+                        // Alterna el valor booleano
+                        return !currentData;
+                    });
+
+                    if (result.committed) {
+                        const newValue = result.snapshot.val();
+                        console.log(`El valor de cls18 ha sido cambiado a: ${newValue}`);
+                        document.getElementById('check').textContent = newValue;
+                    } else {
+                        console.log("La transacción no se confirmó (posiblemente debido a otra actualización concurrente).");
+                    }
+                } catch (error) {
+                    console.error("Error al alternar y mostrar cls18:", error);
+                }
+            break;
+
+            case "_gulpingforrest_10B_.":
+                try {
+                    const cls1Ref = ref(database, 'Class/cls19');
+                    
+                    // Ejecuta una transacción para alternar el valor de cls1
+                    const result = await runTransaction(cls1Ref, (currentData) => {
+                        if (currentData === null) {
+                            // Si cls1 no existe, lo inicializamos a true
+                            return true;
+                        }
+                        // Alterna el valor booleano
+                        return !currentData;
+                    });
+
+                    if (result.committed) {
+                        const newValue = result.snapshot.val();
+                        console.log(`El valor de cls19 ha sido cambiado a: ${newValue}`);
+                        document.getElementById('check').textContent = newValue;
+                    } else {
+                        console.log("La transacción no se confirmó (posiblemente debido a otra actualización concurrente).");
+                    }
+                } catch (error) {
+                    console.error("Error al alternar y mostrar cls19:", error);
+                }
+            break;
+
+            case "_heracklesjobing_11A_.":
+                try {
+                    const cls1Ref = ref(database, 'Class/lab1');
+                    
+                    // Ejecuta una transacción para alternar el valor de cls1
+                    const result = await runTransaction(cls1Ref, (currentData) => {
+                        if (currentData === null) {
+                            // Si cls1 no existe, lo inicializamos a true
+                            return true;
+                        }
+                        // Alterna el valor booleano
+                        return !currentData;
+                    });
+
+                    if (result.committed) {
+                        const newValue = result.snapshot.val();
+                        console.log(`El valor de lab1 ha sido cambiado a: ${newValue}`);
+                        document.getElementById('check').textContent = newValue;
+                    } else {
+                        console.log("La transacción no se confirmó (posiblemente debido a otra actualización concurrente).");
+                    }
+                } catch (error) {
+                    console.error("Error al alternar y mostrar lab1:", error);
+                }
+            break;
+
+            case "_movilizeddick_11B_.":
+                try {
+                    const cls1Ref = ref(database, 'Class/lab4');
+                    
+                    // Ejecuta una transacción para alternar el valor de cls1
+                    const result = await runTransaction(cls1Ref, (currentData) => {
+                        if (currentData === null) {
+                            // Si cls1 no existe, lo inicializamos a true
+                            return true;
+                        }
+                        // Alterna el valor booleano
+                        return !currentData;
+                    });
+
+                    if (result.committed) {
+                        const newValue = result.snapshot.val();
+                        console.log(`El valor de lab4 ha sido cambiado a: ${newValue}`);
+                        document.getElementById('check').textContent = newValue;
+                    } else {
+                        console.log("La transacción no se confirmó (posiblemente debido a otra actualización concurrente).");
+                    }
+                } catch (error) {
+                    console.error("Error al alternar y mostrar lab4:", error);
+                }
+            break;
+
+            case "_carolinanortheste_7B_.":
+                try {
+                    const cls1Ref = ref(database, 'Class/lab5');
+                    
+                    // Ejecuta una transacción para alternar el valor de cls1
+                    const result = await runTransaction(cls1Ref, (currentData) => {
+                        if (currentData === null) {
+                            // Si cls1 no existe, lo inicializamos a true
+                            return true;
+                        }
+                        // Alterna el valor booleano
+                        return !currentData;
+                    });
+
+                    if (result.committed) {
+                        const newValue = result.snapshot.val();
+                        console.log(`El valor de lab5 ha sido cambiado a: ${newValue}`);
+                        document.getElementById('check').textContent = newValue;
+                    } else {
+                        console.log("La transacción no se confirmó (posiblemente debido a otra actualización concurrente).");
+                    }
+                } catch (error) {
+                    console.error("Error al alternar y mostrar lab5:", error);
+                }
+            break;
         }
     };
 
      window.goCheck = function() {
           console.log("Cambiar a activador");
-    window.location.href = "index.html";
+        window.location.href = "index.html";
     };
 </script>
     

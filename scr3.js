@@ -8,7 +8,7 @@ const users = {
     cls5: "_pretzelpanke_7C_.",
     cls6: "_dragonsmovie_11D_.",
     //pabellon 2
-    cls19:"_gulpingforrest_10B_.",
+    cls19: "_gulpingforrest_10B_.",
     lab1: "_heracklesjobing_11A_.",
     lab4: "_movilizeddick_11B_.",
     lab5: "_carolinanortheste_7B_.",
@@ -45,6 +45,8 @@ function logIn(){
         if (users[key] === user && pass == "29_admings") {
             console.log("adelante");
             localStorage.setItem("user", JSON.stringify(user));
+            window.location.href = "test2.html";
+
             break;
         } else {
             console.log("usuario no encontrado");
