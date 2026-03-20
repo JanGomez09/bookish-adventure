@@ -16,8 +16,7 @@
     <div class="main">
         <div class="contenedor">
             <h1 id="check"> </h1>
-        </div>  
-
+        </div>
         
     </div>
 
@@ -54,7 +53,7 @@
     // Hacer la función global
     window.listenForCls1Changes = function() {
         const cls1Ref = ref(database, 'Class/cls1');
-        
+        const count = ref(database, 'Coldown/cls1')
         
         onValue(cls1Ref, (snapshot) => {
             const currentValue = snapshot.val();
