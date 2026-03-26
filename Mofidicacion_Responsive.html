@@ -197,20 +197,1303 @@
  
       <div class="form-group">
         <label for="tiempo">Tiempo de espera de la función</label>
-        <input type="number" id="tiempo" name="tiempo" value="0" class="input-wide" />
+        <input type="number" id="time" name="tiempo" value="0" class="input-wide" />
       </div>
  
-      <button class="btn-modificar" onclick="modificar()">Modificar</button>
+      <button class="btn-modificar" onclick="toggleAndDisplayCls1()" >Modificar</button>
     </div>
   </main>
  
-  <script>
-    function modificar() {
-      const estado = document.getElementById('estado').value;
-      const tiempo = document.getElementById('tiempo').value;
-      alert(`Datos guardados:\nEstado: ${estado}\nTiempo de espera: ${tiempo}`);
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-analytics.js";
+    import { getDatabase, ref, onValue, runTransaction, set } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
+    
+    const firebaseConfig = {
+        apiKey: "AIzaSyCDy9QGkDlwi7TuDG6FHLpLlEb6ltSphUU",
+        authDomain: "citeatro-17dc6.firebaseapp.com",
+        databaseURL: "https://citeatro-17dc6-default-rtdb.firebaseio.com",
+        projectId: "citeatro-17dc6",
+        storageBucket: "citeatro-17dc6.firebasestorage.app",
+        messagingSenderId: "786823561013",
+        appId: "1:786823561013:web:841ad671c6c1b6c391167c",
+        measurementId: "G-W14G1KSXFT"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+    const database = getDatabase(app);
+    
+    console.log("Firebase inicializado correctamente");
+
+    // Hacer las funciones globales para que puedan ser usadas con onclick
+    window.listenForCls1Changes = function() {
+        const cls1Ref = ref(database, 'Class/cls1');
+        
+        onValue(cls1Ref, (snapshot) => {
+            const currentValue = snapshot.val();
+            if (currentValue !== null) {
+                console.log(`Valor actual de cls1 (en tiempo real): ${currentValue}`);
+                document.getElementById('check').textContent = currentValue;
+            } else {
+                console.log("El nodo Class/cls1 no existe.");
+                document.getElementById('check').textContent = "No hay datos";
+            }
+        });
+    };
+    const user = JSON.parse(localStorage.getItem("user"));
+    console.log(user);
+
+    // tiempo de clases
+
+    window.changecount = function() {
+
+        const time = parseFloat(document.getElementById("time").value);
+        const resultado = time * 60;
+         switch (user){
+            case "_woneralizing_7A_.":
+                const nodoRef = ref(database, "Coldown/cls1");
+
+                // Escribir el resultado en Firebase
+                set(nodoRef, resultado)
+                    .then(() => {
+                        console.log("Valor guardado correctamente");
+                    })
+                    .catch((error) => {
+                        console.error("Error al guardar:", error);
+                    });
+               
+            break;
+            case "_drankkulcc_12A_.":
+                            
+
+                const cls2Ref = ref(database, 'Coldown/cls2');
+  
+
+                // Escribir el resultado en Firebase
+                set(cls2Ref, resultado)
+                   .then(() => {
+                        console.log("Valor guardado correctamente");
+                    })
+                    .catch((error) => {
+                        console.error("Error al guardar:", error);
+                    });
+                
+            break;
+            case "_alpolkamipz_10D_.":
+                            
+
+                const cls3Ref = ref(database, 'Coldown/cls3');
+  
+
+                // Escribir el resultado en Firebase
+                set(cls3Ref, resultado)
+                   .then(() => {
+                        console.log("Valor guardado correctamente");
+                    })
+                    .catch((error) => {
+                        console.error("Error al guardar:", error);
+                    });
+                
+            break;
+            case "_haznelgratel_7E_.":
+                            
+
+                const cls4Ref = ref(database, 'Coldown/cls4');
+  
+
+                // Escribir el resultado en Firebase
+                set(cls4Ref, resultado)
+                   .then(() => {
+                        console.log("Valor guardado correctamente");
+                    })
+                    .catch((error) => {
+                        console.error("Error al guardar:", error);
+                    });
+                
+            break;
+            case "_pretzelpanke_7C_.":
+                            
+
+                const cls5Ref = ref(database, 'Coldown/cls5');
+  
+
+                // Escribir el resultado en Firebase
+                set(cls5Ref, resultado)
+                   .then(() => {
+                        console.log("Valor guardado correctamente");
+                    })
+                    .catch((error) => {
+                        console.error("Error al guardar:", error);
+                    });
+                
+            break;
+
+            case "_dragonsmovie_11D_.":
+                            
+
+                const cls6Ref = ref(database, 'Coldown/cls6');
+  
+
+                // Escribir el resultado en Firebase
+                set(cls6Ref, resultado)
+                   .then(() => {
+                        console.log("Valor guardado correctamente");
+                    })
+                    .catch((error) => {
+                        console.error("Error al guardar:", error);
+                    });
+                
+            break;
+
+            case "_jugosambrientos_12B_.":
+                            
+
+                const cls7Ref = ref(database, 'Coldown/cls7');
+  
+
+                // Escribir el resultado en Firebase
+                set(cls7Ref, resultado)
+                   .then(() => {
+                        console.log("Valor guardado correctamente");
+                    })
+                    .catch((error) => {
+                        console.error("Error al guardar:", error);
+                    });
+                
+            break;
+
+            case "_gatsbingbigering_10E_.":
+                            
+
+                const cls8Ref = ref(database, 'Coldown/cls8');
+  
+
+                // Escribir el resultado en Firebase
+                set(cls8Ref, resultado)
+                   .then(() => {
+                        console.log("Valor guardado correctamente");
+                    })
+                    .catch((error) => {
+                        console.error("Error al guardar:", error);
+                    });
+                
+            break;
+
+            case "_gatsbingbigering_10E_.":
+                            
+
+                const cls9Ref = ref(database, 'Coldown/cls9');
+  
+
+                // Escribir el resultado en Firebase
+                set(cls9Ref, resultado)
+                   .then(() => {
+                        console.log("Valor guardado correctamente");
+                    })
+                    .catch((error) => {
+                        console.error("Error al guardar:", error);
+                    });
+                
+            break;
+
+            case "_narnianiarniaana_12C_.":
+                            
+
+                const cls10Ref = ref(database, 'Coldown/cls10');
+  
+
+                // Escribir el resultado en Firebase
+                set(cls10Ref, resultado)
+                   .then(() => {
+                        console.log("Valor guardado correctamente");
+                    })
+                    .catch((error) => {
+                        console.error("Error al guardar:", error);
+                    });
+                
+            break;
+
+            case "_franklinsdaerias_11C_.":
+                            
+
+                const cls12Ref = ref(database, 'Coldown/cls12');
+  
+
+                // Escribir el resultado en Firebase
+                set(cls12Ref, resultado)
+                   .then(() => {
+                        console.log("Valor guardado correctamente");
+                    })
+                    .catch((error) => {
+                        console.error("Error al guardar:", error);
+                    });
+                
+            break;
+
+            case "_sheromlelocksgood_9D_.":
+                            
+
+                const cls13Ref = ref(database, 'Coldown/cls13');
+  
+
+                // Escribir el resultado en Firebase
+                set(cls13Ref, resultado)
+                   .then(() => {
+                        console.log("Valor guardado correctamente");
+                    })
+                    .catch((error) => {
+                        console.error("Error al guardar:", error);
+                    });
+                
+            break;
+
+            case "_punzaderapunzel_8C_.":
+                            
+
+                const cls15Ref = ref(database, 'Coldown/cls15');
+  
+
+                // Escribir el resultado en Firebase
+                set(cls15Ref, resultado)
+                   .then(() => {
+                        console.log("Valor guardado correctamente");
+                    })
+                    .catch((error) => {
+                        console.error("Error al guardar:", error);
+                    });
+                
+            break;
+
+            case "_maltildadaslam_8B_.":
+                            
+
+                const cls16Ref = ref(database, 'Coldown/cls16');
+  
+
+                // Escribir el resultado en Firebase
+                set(cls16Ref, resultado)
+                   .then(() => {
+                        console.log("Valor guardado correctamente");
+                    })
+                    .catch((error) => {
+                        console.error("Error al guardar:", error);
+                    });
+                
+            break;
+
+            case "_glorianamepidioun67_10C_.":
+                            
+
+                const cls17Ref = ref(database, 'Coldown/cls17');
+  
+
+                // Escribir el resultado en Firebase
+                set(cls17Ref, resultado)
+                   .then(() => {
+                        console.log("Valor guardado correctamente");
+                    })
+                    .catch((error) => {
+                        console.error("Error al guardar:", error);
+                    });
+                
+            break;
+
+            case "_spinosochos_7D_.":
+                            
+
+                const cls18Ref = ref(database, 'Coldown/cls18');
+  
+
+                // Escribir el resultado en Firebase
+                set(cls18Ref, resultado)
+                   .then(() => {
+                        console.log("Valor guardado correctamente");
+                    })
+                    .catch((error) => {
+                        console.error("Error al guardar:", error);
+                    });
+                
+            break;
+
+            case "_gulpingforrest_10B_.":
+                            
+
+                const cls19Ref = ref(database, 'Coldown/cls19');
+  
+
+                // Escribir el resultado en Firebase
+                set(cls19Ref, resultado)
+                   .then(() => {
+                        console.log("Valor guardado correctamente");
+                    })
+                    .catch((error) => {
+                        console.error("Error al guardar:", error);
+                    });
+                
+            break;
+
+            case "_heracklesjobing_11A_.":
+                            
+
+                const lab1Ref = ref(database, 'Coldown/lab1');
+  
+
+                // Escribir el resultado en Firebase
+                set(lab1Ref, resultado)
+                   .then(() => {
+                        console.log("Valor guardado correctamente");
+                    })
+                    .catch((error) => {
+                        console.error("Error al guardar:", error);
+                    });
+                
+            break;
+
+            case "_movilizeddick_11B_.":
+                            
+
+                const lab4Ref = ref(database, 'Coldown/lab4');
+  
+
+                // Escribir el resultado en Firebase
+                set(lab4Ref, resultado)
+                   .then(() => {
+                        console.log("Valor guardado correctamente");
+                    })
+                    .catch((error) => {
+                        console.error("Error al guardar:", error);
+                    });
+                
+            break;
+            case "_carolinanortheste_7B_.":
+                            
+
+                const lab5Ref = ref(database, 'Coldown/lab5');
+  
+
+                // Escribir el resultado en Firebase
+                set(lab5Ref, resultado)
+                   .then(() => {
+                        console.log("Valor guardado correctamente");
+                    })
+                    .catch((error) => {
+                        console.error("Error al guardar:", error);
+                    });
+                
+            break;
+            case "_aladdinmagicslamp_9A_.":
+                            
+
+                const wok1Ref = ref(database, 'Coldown/wok1');
+  
+
+                // Escribir el resultado en Firebase
+                set(wok1Ref, resultado)
+                   .then(() => {
+                        console.log("Valor guardado correctamente");
+                    })
+                    .catch((error) => {
+                        console.error("Error al guardar:", error);
+                    });
+                
+            break;
+            case "_losanillosdelseñor_9B_.":
+                            
+
+                const wok2Ref = ref(database, 'Coldown/wok2');
+  
+
+                // Escribir el resultado en Firebase
+                set(wok2Ref, resultado)
+                   .then(() => {
+                        console.log("Valor guardado correctamente");
+                    })
+                    .catch((error) => {
+                        console.error("Error al guardar:", error);
+                    });
+                
+            break;
+            case "_cruellacruelacruela_9C_.":
+                            
+
+                const wok3Ref = ref(database, 'Coldown/wok3');
+  
+
+                // Escribir el resultado en Firebase
+                set(wok3Ref, resultado)
+                   .then(() => {
+                        console.log("Valor guardado correctamente");
+                    })
+                    .catch((error) => {
+                        console.error("Error al guardar:", error);
+                    });
+                
+            break;
+            case "_pidrasfilosofalespotter_8F_.":
+                            
+
+                const wok4Ref = ref(database, 'Coldown/wok4');
+  
+
+                // Escribir el resultado en Firebase
+                set(wok4Ref, resultado)
+                   .then(() => {
+                        console.log("Valor guardado correctamente");
+                    })
+                    .catch((error) => {
+                        console.error("Error al guardar:", error);
+                    });
+                
+            break;
+            case "_jumanjimanjimanjumanji_9E_.":
+                            
+
+                const wok6Ref = ref(database, 'Coldown/wok6');
+  
+
+                // Escribir el resultado en Firebase
+                set(wok6Ref, resultado)
+                   .then(() => {
+                        console.log("Valor guardado correctamente");
+                    })
+                    .catch((error) => {
+                        console.error("Error al guardar:", error);
+                    });
+                
+            break;
+            case "_momialamiamomiasas_11E_.":
+                            
+
+                const wok7Ref = ref(database, 'Coldown/wok7');
+  
+
+                // Escribir el resultado en Firebase
+                set(wok7Ref, resultado)
+                   .then(() => {
+                        console.log("Valor guardado correctamente");
+                    })
+                    .catch((error) => {
+                        console.error("Error al guardar:", error);
+                    });
+                
+            break;
+            case "_elnormalmundodejacks_8D_.":
+                            
+
+                const wok8Ref = ref(database, 'Coldown/wok8');
+  
+
+                // Escribir el resultado en Firebase
+                set(wok8Ref, resultado)
+                   .then(() => {
+                        console.log("Valor guardado correctamente");
+                    })
+                    .catch((error) => {
+                        console.error("Error al guardar:", error);
+                    });
+                
+            break;
+            case "_elozomagozodeoz_8E_.":
+                            
+
+                const wok9Ref = ref(database, 'Coldown/wok9');
+  
+
+                // Escribir el resultado en Firebase
+                set(wok9Ref, resultado)
+                   .then(() => {
+                        console.log("Valor guardado correctamente");
+                    })
+                    .catch((error) => {
+                        console.error("Error al guardar:", error);
+                    });
+                
+            break;
+            case "_elozomagozodeoz_8E_.":
+                            
+
+                const wok10Ref = ref(database, 'Coldown/wok10');
+  
+
+                // Escribir el resultado en Firebase
+                set(wok10Ref, resultado)
+                   .then(() => {
+                        console.log("Valor guardado correctamente");
+                    })
+                    .catch((error) => {
+                        console.error("Error al guardar:", error);
+                    });
+                
+            break;
+        }
+        
     }
-  </script>
+ 
+    // activasion de clases
+    
+    window.toggleAndDisplayCls1 = async function() {
+        switch (user){
+            case "_woneralizing_7A_.":
+
+                try {
+                    const cls1Ref = ref(database, 'Class/cls1');
+                    
+                    // Ejecuta una transacción para alternar el valor de cls1
+                    const result = await runTransaction(cls1Ref, (currentData) => {
+                        if (currentData === null) {
+                            // Si cls1 no existe, lo inicializamos a true
+                            return true;
+                        }
+                        // Alterna el valor booleano
+                        return false;
+                    });
+
+                    if (result.committed) {
+                        const newValue = result.snapshot.val();
+                        console.log(`El valor de cls1 ha sido cambiado a: ${newValue}`);
+                        document.getElementById('check').textContent = newValue;
+                    } else {
+                        console.log("La transacción no se confirmó (posiblemente debido a otra actualización concurrente).");
+                    }
+                } catch (error) {
+                    console.error("Error al alternar y mostrar cls1:", error);
+                }
+            break;
+            case "_drankkulcc_12A_.":
+                try {
+                    const cls1Ref = ref(database, 'Class/cls2');
+                    
+                    // Ejecuta una transacción para alternar el valor de cls1
+                    const result = await runTransaction(cls1Ref, (currentData) => {
+                        if (currentData === null) {
+                            // Si cls1 no existe, lo inicializamos a true
+                            return true;
+                        }
+                        // Alterna el valor booleano
+                        return false;
+                    });
+
+                    if (result.committed) {
+                        const newValue = result.snapshot.val();
+                        console.log(`El valor de cls2 ha sido cambiado a: ${newValue}`);
+                        document.getElementById('check').textContent = newValue;
+                    } else {
+                        console.log("La transacción no se confirmó (posiblemente debido a otra actualización concurrente).");
+                    }
+                } catch (error) {
+                    console.error("Error al alternar y mostrar cls2:", error);
+                }
+            break;
+            case "_alpolkamipz_10D_.":
+                try {
+                    const cls1Ref = ref(database, 'Class/cls3');
+                    
+                    // Ejecuta una transacción para alternar el valor de cls1
+                    const result = await runTransaction(cls1Ref, (currentData) => {
+                        if (currentData === null) {
+                            // Si cls1 no existe, lo inicializamos a true
+                            return true;
+                        }
+                        // Alterna el valor booleano
+                        return false;
+                    });
+
+                    if (result.committed) {
+                        const newValue = result.snapshot.val();
+                        console.log(`El valor de cls3 ha sido cambiado a: ${newValue}`);
+                        document.getElementById('check').textContent = newValue;
+                    } else {
+                        console.log("La transacción no se confirmó (posiblemente debido a otra actualización concurrente).");
+                    }
+                } catch (error) {
+                    console.error("Error al alternar y mostrar cls3:", error);
+                }
+            break;
+
+            case  "_haznelgratel_7E_.":
+                try {
+                    const cls1Ref = ref(database, 'Class/cls4');
+                    
+                    // Ejecuta una transacción para alternar el valor de cls1
+                    const result = await runTransaction(cls1Ref, (currentData) => {
+                        if (currentData === null) {
+                            // Si cls1 no existe, lo inicializamos a true
+                            return true;
+                        }
+                        // Alterna el valor booleano
+                        return false;
+                    });
+
+                    if (result.committed) {
+                        const newValue = result.snapshot.val();
+                        console.log(`El valor de cls4 ha sido cambiado a: ${newValue}`);
+                        document.getElementById('check').textContent = newValue;
+                    } else {
+                        console.log("La transacción no se confirmó (posiblemente debido a otra actualización concurrente).");
+                    }
+                } catch (error) {
+                    console.error("Error al alternar y mostrar cls4:", error);
+                }
+            break;
+
+            case  "_pretzelpanke_7C_.":
+                try {
+                    const cls1Ref = ref(database, 'Class/cls5');
+                    
+                    // Ejecuta una transacción para alternar el valor de cls1
+                    const result = await runTransaction(cls1Ref, (currentData) => {
+                        if (currentData === null) {
+                            // Si cls1 no existe, lo inicializamos a true
+                            return true;
+                        }
+                        // Alterna el valor booleano
+                        return false;
+                    });
+
+                    if (result.committed) {
+                        const newValue = result.snapshot.val();
+                        console.log(`El valor de cls5 ha sido cambiado a: ${newValue}`);
+                        document.getElementById('check').textContent = newValue;
+                    } else {
+                        console.log("La transacción no se confirmó (posiblemente debido a otra actualización concurrente).");
+                    }
+                } catch (error) {
+                    console.error("Error al alternar y mostrar cls5:", error);
+                }
+            break;
+
+            case  "_dragonsmovie_11D_.":
+                try {
+                    const cls1Ref = ref(database, 'Class/cls6');
+                    
+                    // Ejecuta una transacción para alternar el valor de cls1
+                    const result = await runTransaction(cls1Ref, (currentData) => {
+                        if (currentData === null) {
+                            // Si cls1 no existe, lo inicializamos a true
+                            return true;
+                        }
+                        // Alterna el valor booleano
+                        return false;
+                    });
+
+                    if (result.committed) {
+                        const newValue = result.snapshot.val();
+                        console.log(`El valor de cls6 ha sido cambiado a: ${newValue}`);
+                        document.getElementById('check').textContent = newValue;
+                    } else {
+                        console.log("La transacción no se confirmó (posiblemente debido a otra actualización concurrente).");
+                    }
+                } catch (error) {
+                    console.error("Error al alternar y mostrar cls6:", error);
+                }
+            break;
+
+            case "_jugosambrientos_12B_.":
+                try {
+                    const cls1Ref = ref(database, 'Class/cls7');
+                    
+                    // Ejecuta una transacción para alternar el valor de cls1
+                    const result = await runTransaction(cls1Ref, (currentData) => {
+                        if (currentData === null) {
+                            // Si cls1 no existe, lo inicializamos a true
+                            return true;
+                        }
+                        // Alterna el valor booleano
+                        return false;
+                    });
+
+                    if (result.committed) {
+                        const newValue = result.snapshot.val();
+                        console.log(`El valor de cls7 ha sido cambiado a: ${newValue}`);
+                        document.getElementById('check').textContent = newValue;
+                    } else {
+                        console.log("La transacción no se confirmó (posiblemente debido a otra actualización concurrente).");
+                    }
+                } catch (error) {
+                    console.error("Error al alternar y mostrar cls7:", error);
+                }
+            break;
+
+            case "_gatsbingbigering_10E_.":
+                try {
+                    const cls1Ref = ref(database, 'Class/cls8');
+                    
+                    // Ejecuta una transacción para alternar el valor de cls1
+                    const result = await runTransaction(cls1Ref, (currentData) => {
+                        if (currentData === null) {
+                            // Si cls1 no existe, lo inicializamos a true
+                            return true;
+                        }
+                        // Alterna el valor booleano
+                        return false;
+                    });
+
+                    if (result.committed) {
+                        const newValue = result.snapshot.val();
+                        console.log(`El valor de cls8 ha sido cambiado a: ${newValue}`);
+                        document.getElementById('check').textContent = newValue;
+                    } else {
+                        console.log("La transacción no se confirmó (posiblemente debido a otra actualización concurrente).");
+                    }
+                } catch (error) {
+                    console.error("Error al alternar y mostrar cls8:", error);
+                }
+            break;
+
+            case "_gravewifetotalyded_8A_.":
+                try {
+                    const cls1Ref = ref(database, 'Class/cls9');
+                    
+                    // Ejecuta una transacción para alternar el valor de cls1
+                    const result = await runTransaction(cls1Ref, (currentData) => {
+                        if (currentData === null) {
+                            // Si cls1 no existe, lo inicializamos a true
+                            return true;
+                        }
+                        // Alterna el valor booleano
+                        return false;
+                    });
+
+                    if (result.committed) {
+                        const newValue = result.snapshot.val();
+                        console.log(`El valor de cls9 ha sido cambiado a: ${newValue}`);
+                        document.getElementById('check').textContent = newValue;
+                    } else {
+                        console.log("La transacción no se confirmó (posiblemente debido a otra actualización concurrente).");
+                    }
+                } catch (error) {
+                    console.error("Error al alternar y mostrar cls9:", error);
+                }
+            break;
+
+            case "_narnianiarniaana_12C_.":
+                try {
+                    const cls1Ref = ref(database, 'Class/cls10');
+                    
+                    // Ejecuta una transacción para alternar el valor de cls1
+                    const result = await runTransaction(cls1Ref, (currentData) => {
+                        if (currentData === null) {
+                            // Si cls1 no existe, lo inicializamos a true
+                            return true;
+                        }
+                        // Alterna el valor booleano
+                        return false;
+                    });
+
+                    if (result.committed) {
+                        const newValue = result.snapshot.val();
+                        console.log(`El valor de cls10 ha sido cambiado a: ${newValue}`);
+                        document.getElementById('check').textContent = newValue;
+                    } else {
+                        console.log("La transacción no se confirmó (posiblemente debido a otra actualización concurrente).");
+                    }
+                } catch (error) {
+                    console.error("Error al alternar y mostrar cls10:", error);
+                }
+            break;
+
+            case "_franklinsdaerias_11C_.":
+                try {
+                    const cls1Ref = ref(database, 'Class/cls12');
+                    
+                    // Ejecuta una transacción para alternar el valor de cls1
+                    const result = await runTransaction(cls1Ref, (currentData) => {
+                        if (currentData === null) {
+                            // Si cls1 no existe, lo inicializamos a true
+                            return true;
+                        }
+                        // Alterna el valor booleano
+                        return false;
+                    });
+
+                    if (result.committed) {
+                        const newValue = result.snapshot.val();
+                        console.log(`El valor de cls12 ha sido cambiado a: ${newValue}`);
+                        document.getElementById('check').textContent = newValue;
+                    } else {
+                        console.log("La transacción no se confirmó (posiblemente debido a otra actualización concurrente).");
+                    }
+                } catch (error) {
+                    console.error("Error al alternar y mostrar cls12:", error);
+                }
+            break;
+
+            case "_sheromlelocksgood_9D_.":
+                try {
+                    const cls1Ref = ref(database, 'Class/cls13');
+                    
+                    // Ejecuta una transacción para alternar el valor de cls1
+                    const result = await runTransaction(cls1Ref, (currentData) => {
+                        if (currentData === null) {
+                            // Si cls1 no existe, lo inicializamos a true
+                            return true;
+                        }
+                        // Alterna el valor booleano
+                        return false;
+                    });
+
+                    if (result.committed) {
+                        const newValue = result.snapshot.val();
+                        console.log(`El valor de cls13 ha sido cambiado a: ${newValue}`);
+                        document.getElementById('check').textContent = newValue;
+                    } else {
+                        console.log("La transacción no se confirmó (posiblemente debido a otra actualización concurrente).");
+                    }
+                } catch (error) {
+                    console.error("Error al alternar y mostrar cls13:", error);
+                }
+            break;
+
+             case "_punzaderapunzel_8C_.":
+                try {
+                    const cls1Ref = ref(database, 'Class/cls15');
+                    
+                    // Ejecuta una transacción para alternar el valor de cls1
+                    const result = await runTransaction(cls1Ref, (currentData) => {
+                        if (currentData === null) {
+                            // Si cls1 no existe, lo inicializamos a true
+                            return true;
+                        }
+                        // Alterna el valor booleano
+                        return false;
+                    });
+
+                    if (result.committed) {
+                        const newValue = result.snapshot.val();
+                        console.log(`El valor de cls15 ha sido cambiado a: ${newValue}`);
+                        document.getElementById('check').textContent = newValue;
+                    } else {
+                        console.log("La transacción no se confirmó (posiblemente debido a otra actualización concurrente).");
+                    }
+                } catch (error) {
+                    console.error("Error al alternar y mostrar cls15:", error);
+                }
+            break;
+            case "_maltildadaslam_8B_.":
+                try {
+                    const cls1Ref = ref(database, 'Class/cls16');
+                    
+                    // Ejecuta una transacción para alternar el valor de cls1
+                    const result = await runTransaction(cls1Ref, (currentData) => {
+                        if (currentData === null) {
+                            // Si cls1 no existe, lo inicializamos a true
+                            return true;
+                        }
+                        // Alterna el valor booleano
+                        return false;
+                    });
+
+                    if (result.committed) {
+                        const newValue = result.snapshot.val();
+                        console.log(`El valor de cls16 ha sido cambiado a: ${newValue}`);
+                        document.getElementById('check').textContent = newValue;
+                    } else {
+                        console.log("La transacción no se confirmó (posiblemente debido a otra actualización concurrente).");
+                    }
+                } catch (error) {
+                    console.error("Error al alternar y mostrar cls16:", error);
+                }
+            break;
+            case "_glorianamepidioun67_10C_.":
+                try {
+                    const cls1Ref = ref(database, 'Class/cls17');
+                    
+                    // Ejecuta una transacción para alternar el valor de cls1
+                    const result = await runTransaction(cls1Ref, (currentData) => {
+                        if (currentData === null) {
+                            // Si cls1 no existe, lo inicializamos a true
+                            return true;
+                        }
+                        // Alterna el valor booleano
+                        return false;
+                    });
+
+                    if (result.committed) {
+                        const newValue = result.snapshot.val();
+                        console.log(`El valor de cls17 ha sido cambiado a: ${newValue}`);
+                        document.getElementById('check').textContent = newValue;
+                    } else {
+                        console.log("La transacción no se confirmó (posiblemente debido a otra actualización concurrente).");
+                    }
+                } catch (error) {
+                    console.error("Error al alternar y mostrar cls17:", error);
+                }
+            break;
+
+            case "_spinosochos_7D_.":
+                try {
+                    const cls1Ref = ref(database, 'Class/cls18');
+                    
+                    // Ejecuta una transacción para alternar el valor de cls1
+                    const result = await runTransaction(cls1Ref, (currentData) => {
+                        if (currentData === null) {
+                            // Si cls1 no existe, lo inicializamos a true
+                            return true;
+                        }
+                        // Alterna el valor booleano
+                        return false;
+                    });
+
+                    if (result.committed) {
+                        const newValue = result.snapshot.val();
+                        console.log(`El valor de cls18 ha sido cambiado a: ${newValue}`);
+                        document.getElementById('check').textContent = newValue;
+                    } else {
+                        console.log("La transacción no se confirmó (posiblemente debido a otra actualización concurrente).");
+                    }
+                } catch (error) {
+                    console.error("Error al alternar y mostrar cls18:", error);
+                }
+            break;
+
+            case "_gulpingforrest_10B_.":
+                try {
+                    const cls1Ref = ref(database, 'Class/cls19');
+                    
+                    // Ejecuta una transacción para alternar el valor de cls1
+                    const result = await runTransaction(cls1Ref, (currentData) => {
+                        if (currentData === null) {
+                            // Si cls1 no existe, lo inicializamos a true
+                            return true;
+                        }
+                        // Alterna el valor booleano
+                        return false;
+                    });
+
+                    if (result.committed) {
+                        const newValue = result.snapshot.val();
+                        console.log(`El valor de cls19 ha sido cambiado a: ${newValue}`);
+                        document.getElementById('check').textContent = newValue;
+                    } else {
+                        console.log("La transacción no se confirmó (posiblemente debido a otra actualización concurrente).");
+                    }
+                } catch (error) {
+                    console.error("Error al alternar y mostrar cls19:", error);
+                }
+            break;
+
+            case "_heracklesjobing_11A_.":
+                try {
+                    const cls1Ref = ref(database, 'Class/lab1');
+                    
+                    // Ejecuta una transacción para alternar el valor de cls1
+                    const result = await runTransaction(cls1Ref, (currentData) => {
+                        if (currentData === null) {
+                            // Si cls1 no existe, lo inicializamos a true
+                            return true;
+                        }
+                        // Alterna el valor booleano
+                        return false;
+                    });
+
+                    if (result.committed) {
+                        const newValue = result.snapshot.val();
+                        console.log(`El valor de lab1 ha sido cambiado a: ${newValue}`);
+                        document.getElementById('check').textContent = newValue;
+                    } else {
+                        console.log("La transacción no se confirmó (posiblemente debido a otra actualización concurrente).");
+                    }
+                } catch (error) {
+                    console.error("Error al alternar y mostrar lab1:", error);
+                }
+            break;
+
+            case "_movilizeddick_11B_.":
+                try {
+                    const cls1Ref = ref(database, 'Class/lab4');
+                    
+                    // Ejecuta una transacción para alternar el valor de cls1
+                    const result = await runTransaction(cls1Ref, (currentData) => {
+                        if (currentData === null) {
+                            // Si cls1 no existe, lo inicializamos a true
+                            return true;
+                        }
+                        // Alterna el valor booleano
+                        return false;
+                    });
+
+                    if (result.committed) {
+                        const newValue = result.snapshot.val();
+                        console.log(`El valor de lab4 ha sido cambiado a: ${newValue}`);
+                        document.getElementById('check').textContent = newValue;
+                    } else {
+                        console.log("La transacción no se confirmó (posiblemente debido a otra actualización concurrente).");
+                    }
+                } catch (error) {
+                    console.error("Error al alternar y mostrar lab4:", error);
+                }
+            break;
+
+            case "_carolinanortheste_7B_.":
+                try {
+                    const cls1Ref = ref(database, 'Class/lab5');
+                    
+                    // Ejecuta una transacción para alternar el valor de cls1
+                    const result = await runTransaction(cls1Ref, (currentData) => {
+                        if (currentData === null) {
+                            // Si cls1 no existe, lo inicializamos a true
+                            return true;
+                        }
+                        // Alterna el valor booleano
+                        return false;
+                    });
+
+                    if (result.committed) {
+                        const newValue = result.snapshot.val();
+                        console.log(`El valor de lab5 ha sido cambiado a: ${newValue}`);
+                        document.getElementById('check').textContent = newValue;
+                    } else {
+                        console.log("La transacción no se confirmó (posiblemente debido a otra actualización concurrente).");
+                    }
+                } catch (error) {
+                    console.error("Error al alternar y mostrar lab5:", error);
+                }
+            break;
+
+            case "_aladdinmagicslamp_9A_.":
+                try {
+                    const cls1Ref = ref(database, 'Class/wok1');
+                    
+                    // Ejecuta una transacción para alternar el valor de cls1
+                    const result = await runTransaction(cls1Ref, (currentData) => {
+                        if (currentData === null) {
+                            // Si cls1 no existe, lo inicializamos a true
+                            return true;
+                        }
+                        // Alterna el valor booleano
+                        return false;
+                    });
+
+                    if (result.committed) {
+                        const newValue = result.snapshot.val();
+                        console.log(`El valor de wok1 ha sido cambiado a: ${newValue}`);
+                        document.getElementById('check').textContent = newValue;
+                    } else {
+                        console.log("La transacción no se confirmó (posiblemente debido a otra actualización concurrente).");
+                    }
+                } catch (error) {
+                    console.error("Error al alternar y mostrar wok1:", error);
+                }
+            break;
+            
+            case "_losanillosdelseñor_9B_.":
+                try {
+                    const cls1Ref = ref(database, 'Class/wok2');
+                    
+                    // Ejecuta una transacción para alternar el valor de cls1
+                    const result = await runTransaction(cls1Ref, (currentData) => {
+                        if (currentData === null) {
+                            // Si cls1 no existe, lo inicializamos a true
+                            return true;
+                        }
+                        // Alterna el valor booleano
+                        return false;
+                    });
+
+                    if (result.committed) {
+                        const newValue = result.snapshot.val();
+                        console.log(`El valor de wok2 ha sido cambiado a: ${newValue}`);
+                        document.getElementById('check').textContent = newValue;
+                    } else {
+                        console.log("La transacción no se confirmó (posiblemente debido a otra actualización concurrente).");
+                    }
+                } catch (error) {
+                    console.error("Error al alternar y mostrar wok2:", error);
+                }
+            break;
+
+
+            case "_cruellacruelacruela_9C_.":
+                try {
+                    const cls1Ref = ref(database, 'Class/wok3');
+                    
+                    // Ejecuta una transacción para alternar el valor de cls1
+                    const result = await runTransaction(cls1Ref, (currentData) => {
+                        if (currentData === null) {
+                            // Si cls1 no existe, lo inicializamos a true
+                            return true;
+                        }
+                        // Alterna el valor booleano
+                        return false;
+                    });
+
+                    if (result.committed) {
+                        const newValue = result.snapshot.val();
+                        console.log(`El valor de wok3 ha sido cambiado a: ${newValue}`);
+                        document.getElementById('check').textContent = newValue;
+                    } else {
+                        console.log("La transacción no se confirmó (posiblemente debido a otra actualización concurrente).");
+                    }
+                } catch (error) {
+                    console.error("Error al alternar y mostrar wok3:", error);
+                }
+            break;
+
+            case "_pidrasfilosofalespotter_8F_.":
+                try {
+                    const cls1Ref = ref(database, 'Class/wok4');
+                    
+                    // Ejecuta una transacción para alternar el valor de cls1
+                    const result = await runTransaction(cls1Ref, (currentData) => {
+                        if (currentData === null) {
+                            // Si cls1 no existe, lo inicializamos a true
+                            return true;
+                        }
+                        // Alterna el valor booleano
+                        return false;
+                    });
+
+                    if (result.committed) {
+                        const newValue = result.snapshot.val();
+                        console.log(`El valor de wok4 ha sido cambiado a: ${newValue}`);
+                        document.getElementById('check').textContent = newValue;
+                    } else {
+                        console.log("La transacción no se confirmó (posiblemente debido a otra actualización concurrente).");
+                    }
+                } catch (error) {
+                    console.error("Error al alternar y mostrar wok4:", error);
+                }
+            break;
+
+            case "_jumanjimanjimanjumanji_9E_.":
+                try {
+                    const cls1Ref = ref(database, 'Class/wok6');
+                    
+                    // Ejecuta una transacción para alternar el valor de cls1
+                    const result = await runTransaction(cls1Ref, (currentData) => {
+                        if (currentData === null) {
+                            // Si cls1 no existe, lo inicializamos a true
+                            return true;
+                        }
+                        // Alterna el valor booleano
+                        return false;
+                    });
+
+                    if (result.committed) {
+                        const newValue = result.snapshot.val();
+                        console.log(`El valor de wok6 ha sido cambiado a: ${newValue}`);
+                        document.getElementById('check').textContent = newValue;
+                    } else {
+                        console.log("La transacción no se confirmó (posiblemente debido a otra actualización concurrente).");
+                    }
+                } catch (error) {
+                    console.error("Error al alternar y mostrar wok6:", error);
+                }
+            break;
+
+            case "_momialamiamomiasas_11E_.":
+                try {
+                    const cls1Ref = ref(database, 'Class/wok7');
+                    
+                    // Ejecuta una transacción para alternar el valor de cls1
+                    const result = await runTransaction(cls1Ref, (currentData) => {
+                        if (currentData === null) {
+                            // Si cls1 no existe, lo inicializamos a true
+                            return true;
+                        }
+                        // Alterna el valor booleano
+                        return false;
+                    });
+
+                    if (result.committed) {
+                        const newValue = result.snapshot.val();
+                        console.log(`El valor de wok7 ha sido cambiado a: ${newValue}`);
+                        document.getElementById('check').textContent = newValue;
+                    } else {
+                        console.log("La transacción no se confirmó (posiblemente debido a otra actualización concurrente).");
+                    }
+                } catch (error) {
+                    console.error("Error al alternar y mostrar wok7:", error);
+                }
+            break;
+
+            case "_elnormalmundodejacks_8D_.":
+                try {
+                    const cls1Ref = ref(database, 'Class/wok8');
+                    
+                    // Ejecuta una transacción para alternar el valor de cls1
+                    const result = await runTransaction(cls1Ref, (currentData) => {
+                        if (currentData === null) {
+                            // Si cls1 no existe, lo inicializamos a true
+                            return true;
+                        }
+                        // Alterna el valor booleano
+                        return false;
+                    });
+
+                    if (result.committed) {
+                        const newValue = result.snapshot.val();
+                        console.log(`El valor de wok8 ha sido cambiado a: ${newValue}`);
+                        document.getElementById('check').textContent = newValue;
+                    } else {
+                        console.log("La transacción no se confirmó (posiblemente debido a otra actualización concurrente).");
+                    }
+                } catch (error) {
+                    console.error("Error al alternar y mostrar wok8:", error);
+                }
+            break;
+
+            case "_elozomagozodeoz_8E_.":
+                try {
+                    const cls1Ref = ref(database, 'Class/wok9');
+                    
+                    // Ejecuta una transacción para alternar el valor de cls1
+                    const result = await runTransaction(cls1Ref, (currentData) => {
+                        if (currentData === null) {
+                            // Si cls1 no existe, lo inicializamos a true
+                            return true;
+                        }
+                        // Alterna el valor booleano
+                        return false;
+                    });
+
+                    if (result.committed) {
+                        const newValue = result.snapshot.val();
+                        console.log(`El valor de wok9 ha sido cambiado a: ${newValue}`);
+                        document.getElementById('check').textContent = newValue;
+                    } else {
+                        console.log("La transacción no se confirmó (posiblemente debido a otra actualización concurrente).");
+                    }
+                } catch (error) {
+                    console.error("Error al alternar y mostrar wok9:", error);
+                }
+            break;
+
+            case "_mazerunneringmaze_10A_.":
+                try {
+                    const cls1Ref = ref(database, 'Class/wok10');
+                    
+                    // Ejecuta una transacción para alternar el valor de cls1
+                    const result = await runTransaction(cls1Ref, (currentData) => {
+                        if (currentData === null) {
+                            // Si cls1 no existe, lo inicializamos a true
+                            return true;
+                        }
+                        // Alterna el valor booleano
+                        return false;
+                    });
+
+                    if (result.committed) {
+                        const newValue = result.snapshot.val();
+                        console.log(`El valor de wok10 ha sido cambiado a: ${newValue}`);
+                        document.getElementById('check').textContent = newValue;
+                    } else {
+                        console.log("La transacción no se confirmó (posiblemente debido a otra actualización concurrente).");
+                    }
+                } catch (error) {
+                    console.error("Error al alternar y mostrar wok10:", error);
+                }
+            break;
+
+        }
+    };
+
+     window.goCheck = function() {
+          console.log("Cambiar a activador");
+        window.location.href = "test1.html";
+    };
+</script>
  
 </body>
 </html>
