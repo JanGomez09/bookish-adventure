@@ -19,13 +19,7 @@
           <h3 id="counter"> </h3>
         </div>  
          <div class="contenedor">
-            <div class="cuadro">
-                <div class="campo">
-                    <label>Cantidad de personas en la fila</label>
-                    <input type="number" id="line" placeholder="Nombre">
-                </div>
-
-                <br><br><br>
+            <div class="cuadro">    
 
                 <div class="campo">
                     <label>Tiempo de funcion</label>
@@ -93,7 +87,7 @@
     window.changecount = function() {
 
         const time = parseFloat(document.getElementById("time").value);
-        const resultado = time;
+        const resultado = time * 60;
          switch (user){
             case "_woneralizing_7A_.":
                 const nodoRef = ref(database, "Coldown/cls1");
